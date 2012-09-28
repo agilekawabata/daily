@@ -48,4 +48,29 @@ describe Income do
       end
     end
   end
+  
+  describe ".calc_all" do
+    before(:each) do
+      @uriage = Income.create(
+        :title => "チョコレートの売上", 
+        :date_unit => Income::DATE_UNIT_DAY, 
+        :quantity => 10, 
+        :amount => 100)
+        
+      @income = Income.create(
+        :title => "給料", 
+        :date_unit => Income::DATE_UNIT_MONTH, 
+        :quantity => 1, 
+        :amount => 300000)
+      
+      @otoshidama = Income.create(
+        :title => "お年玉", 
+        :date_unit => Income::DATE_UNIT_YEAR, 
+        :quantity => 3, 
+        :amount => 10000)
+    end
+    it "は、１日あたりの合計金額を返すべき" do
+      Income.calc_all.should == 1000 + 9863 + 82
+    end
+  end
 end
