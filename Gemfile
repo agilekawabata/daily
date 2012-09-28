@@ -21,18 +21,19 @@ group :assets do
 end
 
 gem 'jquery-rails'
+gem "twitter-bootstrap-rails"
+gem 'simple_form', '~> 2.0.0'
 
-# To use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.0.0'
+# DEVELOP AND TESTING #####################
+group :development,   :test do
+  gem "rspec-rails",  "~> 2.0"
+  gem "rails3-generators",    :git => "https://github.com/neocoin/rails3-generators.git"
+end
+gem 'ffaker'
 
-# To use Jbuilder templates for JSON
-# gem 'jbuilder'
+group :development do
+  gem 'i18n_generators'
+end
+gem 'factory_girl_rails'
 
-# Use unicorn as the app server
-# gem 'unicorn'
 
-# Deploy with Capistrano
-# gem 'capistrano'
-
-# To use debugger
-# gem 'debugger'
