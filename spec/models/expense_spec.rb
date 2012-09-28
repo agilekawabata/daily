@@ -57,6 +57,7 @@ describe Expense do
       end
       it "は、１日あたりの金額を返すべき" do
         @travel.calc_daily.should == 383
+        @movie.calc_daily.should == 49
       end
     end
   end
