@@ -61,4 +61,29 @@ describe Expense do
       end
     end
   end
+  
+  describe ".calc_all" do
+    before(:each) do
+      @water = Expense.create(
+        :title => "Mineral Water", 
+        :date_unit => Expense::DATE_UNIT_DAY, 
+        :quantity => 2, 
+        :amount => 100)
+      
+      @gas = Expense.create(
+        :title => "ガス料金", 
+        :date_unit => Expense::DATE_UNIT_MONTH, 
+        :quantity => 1, 
+        :amount => 3650)
+
+      @travel = Expense.create(
+        :title => "旅行", 
+        :date_unit => Expense::DATE_UNIT_YEAR, 
+        :quantity => 2, 
+        :amount => 70000)
+    end
+    it "は、１日あたりの合計金額を返すべき" do
+      Expense.calc_all.should == 200 + 120 + 383
+    end
+  end
 end

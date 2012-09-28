@@ -19,4 +19,12 @@ class Expense < ActiveRecord::Base
       amount * quantity / 365
     end
   end
+  
+  def self.calc_all
+    total = 0
+    all.each do |expense|
+      total += expense.calc_daily
+    end
+    total
+  end
 end
