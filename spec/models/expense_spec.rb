@@ -5,7 +5,7 @@ describe Expense do
   describe "#calc_daily" do
     context "date_unitがdayの場合" do
       before(:each) do
-        @water = Expense.new(
+        @water = Expense.create(
           :title => "Mineral Water", 
           :date_unit => Expense::DATE_UNIT_DAY, 
           :quantity => 2, 
