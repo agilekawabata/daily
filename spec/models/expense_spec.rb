@@ -29,9 +29,16 @@ describe Expense do
           :date_unit => Expense::DATE_UNIT_MONTH, 
           :quantity => 1, 
           :amount => 3650)
+        
+        @nomi = Expense.create(
+          :title => "飲み会", 
+          :date_unit => Expense::DATE_UNIT_MONTH, 
+          :quantity => 4, 
+          :amount => 3000)
       end
       it "は、１日あたりの金額を返すべき" do
         @gas.calc_daily.should == 120
+        @nomi.calc_daily.should == 394
       end
     end
   end
