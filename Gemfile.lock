@@ -91,6 +91,7 @@ GEM
     net-http-persistent (2.7)
     nokogiri (1.5.5)
     ntlm-http (0.1.1)
+    pg (0.14.1)
     polyglot (0.3.3)
     rack (1.4.1)
     rack-cache (1.2)
@@ -173,6 +174,7 @@ DEPENDENCIES
   ffaker
   i18n_generators
   jquery-rails
+  pg
   rails (= 3.2.8)
   rails3-generators!
   rspec-rails (~> 2.0)
