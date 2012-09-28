@@ -8,4 +8,8 @@ class Expense < ActiveRecord::Base
   DATE_UNIT_MONTH = "month"
   DATE_UNIT_DAY = "day"
   DATE_UNIT_SELECTION = [["年", DATE_UNIT_YEAR], ["月", DATE_UNIT_MONTH], ["日", DATE_UNIT_DAY]]
+  
+  def calc_daily
+    200
+  end
 end
