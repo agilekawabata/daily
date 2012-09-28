@@ -1,0 +1,25 @@
+<table class="table table-bordered">
+  <tr>
+    <td>Title</td>
+    <td><%= @expense.title %></td>
+  </tr>
+
+  <tr>
+    <td>Date unit</td>
+    <td><%= @expense.date_unit %></td>
+  </tr>
+
+  <tr>
+    <td>Quantity</td>
+    <td><%= @expense.quantity %></td>
+  </tr>
+
+  <tr>
+    <td>Amount</td>
+    <td><%= @expense.amount %></td>
+  </tr>
+
+</table>
+
+<%= link_to 'Edit', edit_expense_path(@expense), :class => "btn" %>
+<%= link_to 'Back', expenses_path, :class => "btn" %>
