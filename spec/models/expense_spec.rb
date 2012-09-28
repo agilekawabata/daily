@@ -41,5 +41,23 @@ describe Expense do
         @nomi.calc_daily.should == 394
       end
     end
+    
+    context "date_unitが年単位の場合" do
+      before(:each) do
+        @travel = Expense.create(
+          :title => "旅行", 
+          :date_unit => Expense::DATE_UNIT_YEAR, 
+          :quantity => 2, 
+          :amount => 70000)
+        @movie = Expense.create(
+          :title => "映画", 
+          :date_unit => Expense::DATE_UNIT_YEAR, 
+          :quantity => 10, 
+          :amount => 1800)
+      end
+      it "は、１日あたりの金額を返すべき" do
+        @travel.calc_daily.should == 383
+      end
+    end
   end
 end

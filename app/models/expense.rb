@@ -15,6 +15,8 @@ class Expense < ActiveRecord::Base
       amount * quantity
     when DATE_UNIT_MONTH
       amount * quantity * 12 / 365
+    when DATE_UNIT_YEAR
+      amount * quantity / 365
     end
   end
 end
