@@ -18,7 +18,10 @@
     <td>Amount</td>
     <td><%= @expense.amount %></td>
   </tr>
-
+  <tr>
+    <td>Daily</td>
+    <td><%= @expense.calc_daily %></td>
+  </tr>
 </table>
 
 <%= link_to 'Edit', edit_expense_path(@expense), :class => "btn" %>

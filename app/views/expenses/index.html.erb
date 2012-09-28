@@ -9,6 +9,7 @@
         <th>Date unit</th>
         <th>Quantity</th>
         <th>Amount</th>
+        <th>Daily</th>
         <th></th>
       <th></th>
       <th></th>
@@ -22,6 +23,7 @@
         <td><%= expense.date_unit %></td>
         <td><%= expense.quantity %></td>
         <td><%= expense.amount %></td>
+        <td><%= expense.calc_daily %></td>
         <td><%= link_to 'Show', expense, :class => "btn btn-mini btn-info" %></td>
       <td><%= link_to 'Edit', edit_expense_path(expense), :class => "btn btn-mini btn-success" %></td>
       <td><%= link_to 'Destroy', expense, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-mini btn-danger" %></td>
