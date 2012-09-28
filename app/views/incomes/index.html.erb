@@ -1,0 +1,35 @@
+<div class="page-header">
+  <h1>Listing incomes</h1>
+</div>
+
+<table class="table table-bordered table-striped">
+  <thead>
+    <tr>
+        <th>Title</th>
+        <th>Date unit</th>
+        <th>Quantity</th>
+        <th>Amount</th>
+        <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+  <% @incomes.each do |income| %>
+    <tr>
+        <td><%= income.title %></td>
+        <td><%= income.date_unit %></td>
+        <td><%= income.quantity %></td>
+        <td><%= income.amount %></td>
+        <td><%= link_to 'Show', income, :class => "btn btn-mini btn-info" %></td>
+      <td><%= link_to 'Edit', edit_income_path(income), :class => "btn btn-mini btn-success" %></td>
+      <td><%= link_to 'Destroy', income, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-mini btn-danger" %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<br />
+
+<%= link_to 'New Income', new_income_path, :class => "btn" %>

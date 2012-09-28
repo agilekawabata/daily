@@ -1,4 +1,6 @@
 Daily::Application.routes.draw do
+  resources :incomes
+
   resources :expenses
 
   # The priority is based upon order of creation:

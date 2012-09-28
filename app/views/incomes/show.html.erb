@@ -1,0 +1,25 @@
+<table class="table table-bordered">
+  <tr>
+    <td>Title</td>
+    <td><%= @income.title %></td>
+  </tr>
+
+  <tr>
+    <td>Date unit</td>
+    <td><%= @income.date_unit %></td>
+  </tr>
+
+  <tr>
+    <td>Quantity</td>
+    <td><%= @income.quantity %></td>
+  </tr>
+
+  <tr>
+    <td>Amount</td>
+    <td><%= @income.amount %></td>
+  </tr>
+
+</table>
+
+<%= link_to 'Edit', edit_income_path(@income), :class => "btn" %>
+<%= link_to 'Back', incomes_path, :class => "btn" %>
