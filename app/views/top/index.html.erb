@@ -1,0 +1,23 @@
+<div class="page-header">
+  <h1>Daily</h1>
+</div>
+
+<div>
+  <h2>収入</h2>
+  <p class="lead">
+    <%= @incomes.size %>件の収入があり、<br />
+    一日あたりの収入合計は<strong><%= Income.calc_all %></strong>円です。
+  </p>
+</div>
+
+<div>
+  <h2>支出</h2>
+  <p class="lead">
+    <%= @expenses.size %>件の支出があり、<br />
+    一日あたりの支出合計は<strong><%= Expense.calc_all %></strong>円です。
+  </p>
+</div>
+
+<div class="well">
+  <h2>あなたの一日あたりの収支は <%= Income.calc_all - Expense.calc_all %> 円です。</h2>
+</div>
