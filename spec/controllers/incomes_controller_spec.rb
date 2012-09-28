@@ -24,7 +24,13 @@ describe IncomesController do
   # Income. As you add validations to Income, be sure to
   # update the return value of this method accordingly.
   def valid_attributes
-    {}
+    {
+      :title => "income",
+      :date_unit => Income::DATE_UNIT_MONTH,
+      :quantity => 1,
+      :amount => 300000,
+    }
+
   end
 
   # This should return the minimal set of values that should be in the session
