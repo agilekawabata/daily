@@ -32,6 +32,10 @@
   </tbody>
 </table>
 
+<div class="hero-unit">
+  <h2>１日あたりにかかっている合計は <%= Expense.calc_all %> 円です！</h2>
+</div>
+
 <br />
 
 <%= link_to 'New Expense', new_expense_path, :class => "btn" %>
