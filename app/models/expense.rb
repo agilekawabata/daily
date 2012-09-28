@@ -10,6 +10,11 @@ class Expense < ActiveRecord::Base
   DATE_UNIT_SELECTION = [["年", DATE_UNIT_YEAR], ["月", DATE_UNIT_MONTH], ["日", DATE_UNIT_DAY]]
   
   def calc_daily
-    amount * quantity
+    case date_unit
+    when DATE_UNIT_DAY
+      amount * quantity
+    when DATE_UNIT_MONTH
+      amount * quantity * 12 / 365
+    end
   end
 end
