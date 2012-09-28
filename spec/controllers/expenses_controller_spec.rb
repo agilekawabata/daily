@@ -24,7 +24,12 @@ describe ExpensesController do
   # Expense. As you add validations to Expense, be sure to
   # update the return value of this method accordingly.
   def valid_attributes
-    {}
+    {
+      :title => "some title",
+      :date_unit => Expense::DATE_UNIT_SELECTION[0][1],
+      :quantity => 1,
+      :amount => 100,
+    }
   end
 
   # This should return the minimal set of values that should be in the session
