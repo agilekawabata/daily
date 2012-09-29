@@ -6,6 +6,7 @@
     <%= f.input :date_unit, :collection => Expense::DATE_UNIT_SELECTION, :include_blank => false %>
     <%= f.input :quantity %>
     <%= f.input :amount %>
+    <%= f.input :tax_flag, :collection => [["課税有り", true], ["課税なし", false]], :include_blank => false  %>
   </div>
 
   <div class="form-actions">

@@ -29,6 +29,7 @@ describe ExpensesController do
       :date_unit => Expense::DATE_UNIT_SELECTION[0][1],
       :quantity => 1,
       :amount => 100,
+      :tax_flag => true,
     }
   end
 

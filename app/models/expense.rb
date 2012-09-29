@@ -1,25 +1,30 @@
 # coding: utf-8
 class Expense < ActiveRecord::Base
-  attr_accessible :amount, :date_unit, :quantity, :title
-  
+  attr_accessible :amount, :date_unit, :quantity, :title, :tax_flag
+
   validates_presence_of :amount, :date_unit, :quantity, :title
-  
+
   DATE_UNIT_YEAR = "year"
   DATE_UNIT_MONTH = "month"
   DATE_UNIT_DAY = "day"
   DATE_UNIT_SELECTION = [["年", DATE_UNIT_YEAR], ["月", DATE_UNIT_MONTH], ["日", DATE_UNIT_DAY]]
-  
+
   def calc_daily
+    if tax_flag
+      taxed_amount = (amount * 1.05).to_i
+    else
+      taxed_amount = amount
+    end
     case date_unit
     when DATE_UNIT_DAY
-      amount * quantity
+      taxed_amount * quantity
     when DATE_UNIT_MONTH
-      amount * quantity * 12 / 365
+      taxed_amount * quantity * 12 / 365
     when DATE_UNIT_YEAR
-      amount * quantity / 365
+      taxed_amount * quantity / 365
     end
   end
-  
+
   def self.calc_all
     total = 0
     all.each do |expense|

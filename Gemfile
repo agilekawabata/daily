@@ -28,7 +28,7 @@ gem 'simple_form', '~> 2.0.0'
 # DEVELOP AND TESTING #####################
 group :development,   :test do
   gem "rspec-rails",  "~> 2.0"
-  gem "rails3-generators",    :git => "https://github.com/neocoin/rails3-generators.git"
+  gem "rails3-generators"
 end
 gem 'ffaker'
 
